@@ -67,7 +67,7 @@ let fakeHostName;
 
 // Subscription and conversion details
 let subProtocol = 'https';
-let subConverter = ''; // Subscription conversion backend using Sheep's function
+let subConverter = atob('dXJsLnYxLm1r'); // Subscription conversion backend using Sheep's function
 let subConfig = ""; // Subscription profile
 let fileName = 'AM%E7%A7%91%E6%8A%80';
 let isBase64 = true;

@@ -2,3 +2,4 @@ https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/
 https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipHK.txt@2.2.2.2
 https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipv4.csv@3.3.3.3
 https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipUS.txt@91.149.239.122
+https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipv4.txt

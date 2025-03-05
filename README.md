@@ -58,7 +58,7 @@ HTTPS：443，2053，2083，2087，2096，8443
      您分配到的域名是 `amclubss.com`，则添加自定义域填入 `vless.amclubss.com`即可，点击 `激活域`即可。    
 3. 给UUID设置KV存储桶(可选项，推荐设置)： 
    - 在 CloudFlare主页的左边菜单的 ` 存储和数据库` 选项卡 -> 展开选择点击 `KV` -> 右方点击 -> `创建` -> 填入 `命名空间名称`(此名称自己命名) 后 -> 点击 `添加`。(此步已有可忽略)
-   - 在 workers控制台的 `设置` 选项卡 -> 点击 `绑定` -> 右方点击 -> `添加` -> 选择 `KV 命名空间` -> 变量名称 填入 `amclubs`(此名称固定不能变) -> KV 命名空间 选择 在上面创建的 `命名空间名称`后 -> 右下方点击 `部署`。
+   - 在 workers控制台的 `设置` 选项卡 -> 点击 `绑定` -> 右方点击 -> `添加` -> 选择 `KV 命名空间` -> 变量名称 填入 `kvid`(此名称固定不能变) -> KV 命名空间 选择 在上面创建的 `命名空间名称`后 -> 右下方点击 `部署`。
    - 在 `设置` 选项卡，在右上角点击 `创建部署` 后，重新上传 [_worker.js.zip](https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/_worker.js.zip) 文件后点击 `保存并部署` 即可。
 4. 访问订阅内容：
    - 访问 `https://[YOUR-WORKERS-URL]/[UUID]` 即可获取订阅内容（默认UUID是：d0298536-d670-4045-bbb1-ddd5ea68683e）。
@@ -107,7 +107,7 @@ HTTPS：443，2053，2083，2087，2096，8443
 ## 四、变量说明 [视频教程](https://www.youtube.com/watch?v=ag12Rpc9KP4&t=739s)
 | 变量名 | 示例 | 必填 | 备注 | YT |
 |-----|-----|-----|-----|-----|
-| UUID            | d0298536-d670-4045-bbb1-ddd5ea68683e（默认） |✅| 支持Cloudflare的KV存储桶设置 [在线获取UUID](https://1024tools.com/uuid) 如果是Trojan节点的变量是：PASSWORD                                   |  |
+| UUID            | 27889662-d1c1-42ff-9ca7-845af8e6b00a（默认） |✅| 支持Cloudflare的KV存储桶设置 [在线获取UUID](https://1024tools.com/uuid) 如果是Trojan节点的变量是：PASSWORD                                   |  |
 | PROXYIP          | proxyip.amclubs.kozow.com </br>或</br> [https://raw.github.../proxyip.txt](https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/proxyip.txt)  |❌| 访问CloudFlare的CDN代理节点(支持多PROXYIP, PROXYIP之间使用`,`或 换行 作间隔),支持端口设置默认443 如: proxyip.amclubs.kozow.com:2053 ，支持远程txt或csv文件| [教程](https://youtu.be/pKrlfRRB0gU) |
 | SOCKS5           | user:password@127.0.0.1:1080         |❌| 优先作为访问CFCDN站点的SOCKS5代理                                                   | [教程](https://youtu.be/Bw82BH_ecC4) |
 | DNS_RESOLVER_URL | https://cloudflare-dns.com/dns-query |❌| DNS解析获取作用，小白勿用                                                           |  |

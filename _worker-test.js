@@ -68,7 +68,7 @@ let fakeHostName;
 // Subscription and conversion details
 let subProtocol = 'https';
 let subConverter = atob('dXJsLnYxLm1r'); // Subscription conversion backend using Sheep's function
-let subConfig = ""; // Subscription profile
+let subConfig = "https://raw.githubusercontent.com/amclubs/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; // Subscription profile
 let fileName = 'AM%E7%A7%91%E6%8A%80';
 let isBase64 = true;
 

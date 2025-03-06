@@ -44,9 +44,9 @@ let ipUrlCsv = [
 ];
 // Preferred addresses with optional TLS subscription
 let ipLocal = [
-	'icook.tw:443'#Local,
-	'icook.hk:443'#Local,
-	'time.is:2096'#Local
+	'icook.tw:443',
+	'icook.hk:443',
+	'time.is:2096'
 ];
 let noTLS = 'false';
 let sl = 5;

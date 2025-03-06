@@ -1,7 +1,11 @@
+156.238.19.8:443#JP
+47.57.181.147#HK
+47.57.14.118#HK
 [2606:4700:3036:6ed4:ffdf:f2ba:820b:ed5c]#IPV6
-[2606:4700:9b08:7ce1:8882:ba8c:2880:c619]#IPV6
-[2606:4700:9b08:dd59:154f:abf8:46b5:25bb]#IPV6
-https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipJP.txt@91.149.239.122
-https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipHK.txt@91.149.239.122
-https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipKR.txt@91.149.239.122
-https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipUS.txt@91.149.239.122
+198.62.62.156:443#US
+162.159.129.67:8443#US
+104.16.134.27:2083#US
+104.25.254.4:2087#US
+104.17.128.1:2096#US
+[2606:4700:9b08:7ce1:8882:ba8c:2880:c619]#US IPV6
+[2606:4700:9b08:dd59:154f:abf8:46b5:25bb]#US IPV6

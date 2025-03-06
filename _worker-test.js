@@ -44,9 +44,9 @@ let ipUrlCsv = [
 ];
 // Preferred addresses with optional TLS subscription
 let ipLocal = [
-	'visa.cn:443',
-	'icook.hk',
-	'time.is'
+	'icook.tw:443'#Local,
+	'icook.hk:443'#Local,
+	'time.is:2096'#Local
 ];
 let noTLS = 'false';
 let sl = 5;
@@ -68,7 +68,7 @@ let fakeHostName;
 // Subscription and conversion details
 let subProtocol = 'https';
 let subConverter = atob('dXJsLnYxLm1r'); // Subscription conversion backend using Sheep's function
-let subConfig = "https://raw.githubusercontent.com/amclubs/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; // Subscription profile
+let subConfig = "https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ClashConfig.ini"; // Subscription profile
 let fileName = 'AM%E7%A7%91%E6%8A%80';
 let isBase64 = true;
 
@@ -879,7 +879,7 @@ function getConfigHtml(userID, host, remark, v2ray, clash) {
       </style>
     </head>
   `;
-
+	const httpAddr = `https://${host}/${userID}`;
 	// Prepare header string with left alignment
 	const header = `
 		<p align="left" style="padding-left: 20px; margin-top: 20px;">
@@ -887,13 +887,14 @@ function getConfigHtml(userID, host, remark, v2ray, clash) {
 		GitHub项目地址 点击进入：</br>
 		<a href="https://github.com/${projectName}" target="_blank">https://github.com/${projectName}</a>
 		</br></br>
+                <a href="${httpAddr}/ui" target="_blank">默认UUID为:${userID},点击更改UUID</a>
 	
     
 		</p>
   `;
 
 	// Prepare the output string
-	const httpAddr = `https://${host}/${userID}`;
+	// const httpAddr = `https://${host}/${userID}`;
 	const output = `
 ################################################################
 订阅地址, 支持 Base64、clash-meta、sing-box、Quantumult X、小火箭、surge 等订阅格式, ${remark}

@@ -887,7 +887,8 @@ function getConfigHtml(userID, host, remark, v2ray, clash) {
 		GitHub项目地址 点击进入：</br>
 		<a href="https://github.com/${projectName}" target="_blank">https://github.com/${projectName}</a>
 		</br></br>
-                <a href="${httpAddr}/ui" target="_blank">默认UUID为:${userID},点击更改UUID</a>
+    KV空间变量名设置为：kvid，并进行绑定 </br></br>
+    默认UUID为：${userID}，<a href="${httpAddr}/ui" target="_blank">点击更改UUID</a>
 	
     
 		</p>

@@ -1,9 +1,8 @@
 /**
- * YouTube Channel: https://youtube.com/@am_clubs
- * Telegram Group: https://t.me/am_clubs
- * GitHub Repository: https://github.com/amclubs
- * Personal Blog: https://amclubs.blogspot.com
- * Personal Blog: https://amclubss.com
+
+ * GitHub Repository: https://github.com/laputa2046-tech
+ * kv空间变量名设置为：kvid
+ * 
  */
 
 // @ts-ignore
@@ -11,18 +10,17 @@ import { connect } from 'cloudflare:sockets';
 
 // Generate your own UUID using the following command in PowerShell:
 // Powershell -NoExit -Command "[guid]::NewGuid()"
-let userID = 'd0298536-d670-4045-bbb1-ddd5ea68683e';
+let userID = '27889662-d1c1-42ff-9ca7-845af8e6b00a';
 let kvUUID;
 
 // Proxy IPs to choose from
-let proxyIPs = [
-	'proxyip.amclubs.camdvr.org',
-	'proxyip.amclubs.kozow.com'
-];
+let proxyIPs = [ ];
+
+
 // Randomly select a proxy IP from the list
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 let proxyPort = 443;
-let proxyIpTxt = atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FtY2x1YnMvYW0tY2YtdHVubmVsL21haW4vcHJveHlpcC50eHQ=');
+let proxyIpTxt = 'https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/proxyip.txt';
 
 // Setting the socks5 will ignore proxyIP
 // Example:  user:pass@host:port  or  host:port
@@ -39,21 +37,21 @@ let ipUrl = [
 
 ];
 let ipUrlTxt = [
-	atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FtY2x1YnMvYW0tY2YtdHVubmVsL21haW4vaXB2NC50eHQ=')
+	'https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipv4.txt'
 ];
 let ipUrlCsv = [
 	// atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FtY2x1YnMvYW0tY2YtdHVubmVsL21haW4vaXB2NC5jc3Y=')
 ];
 // Preferred addresses with optional TLS subscription
 let ipLocal = [
-	'visa.cn:443#youtube.com/@am_clubs AM科技(订阅频道观看教程)',
-	'icook.hk#t.me/am_clubs TG群(加入解锁免费节点)',
-	'time.is#github.com/amclubs GitHub仓库(关注查看新功能)'
+	'icook.tw:443',
+	'icook.hk:443',
+	'time.is:2096'
 ];
 let noTLS = 'false';
 let sl = 5;
 
-let tagName = atob('YW1jbHVicw==');
+let tagName = 'laputa';
 let subUpdateTime = 6; // Subscription update time in hours
 let timestamp = 4102329600000; // Timestamp for the end date (2099-12-31)
 let total = 99 * 1125899906842624; // PB (perhaps referring to bandwidth or total entries)
@@ -70,15 +68,16 @@ let fakeHostName;
 // Subscription and conversion details
 let subProtocol = 'https';
 let subConverter = atob('dXJsLnYxLm1r'); // Subscription conversion backend using Sheep's function
-let subConfig = "https://raw.githubusercontent.com/amclubs/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; // Subscription profile
+let subConfig = "https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ClashConfig.ini"; // Subscription profile
 let fileName = 'AM%E7%A7%91%E6%8A%80';
 let isBase64 = true;
 
 let botToken = '';
 let chatID = '';
 
-let projectName = atob('YW1jbHVicy9hbS1jZi10dW5uZWw');
-let ytName = atob('aHR0cHM6Ly95b3V0dWJlLmNvbS9AYW1fY2x1YnM=');
+// let projectName = atob('YW1jbHVicy9hbS1jZi10dW5uZWw');
+let projectName = 'laputa2046-tech/swf-cf-tunnel';
+// let ytName = atob('aHR0cHM6Ly95b3V0dWJlLmNvbS9AYW1fY2x1YnM=');
 const httpPattern = /^http(s)?:\/\/.+/;
 
 if (!isValidUUID(userID)) {
@@ -145,7 +144,7 @@ export default {
 			} else {
 				let proxyIpTxts = await addIpText(proxyIpTxt);
 				let ipUrlTxtAndCsv = await getIpUrlTxtAndCsv(noTLS, proxyIpTxts, null);
-				let updatedIps = ipUrlTxtAndCsv.txt.map(ip => `${tagName}${download}.${ip}`);
+				let updatedIps = ipUrlTxtAndCsv.txt.map(ip => `${ip}`);
 				const uniqueIpTxt = [...new Set([...updatedIps, ...proxyIPs])];
 				proxyIP = uniqueIpTxt[Math.floor(Math.random() * uniqueIpTxt.length)];
 			}
@@ -531,7 +530,7 @@ function getHtmlResponse(socks5Enable, userID, host, v2ray, clash) {
 		proxyIPRemark = `socks5: ${parsedSocks5.hostname}:${parsedSocks5.port}`;
 	}
 
-	let remark = `您的订阅节点由设置变量 ${subRemark} 提供, 当前使用反代是${proxyIPRemark}`;
+	let remark = `您的订阅节点由设置变量 ${subRemark} 提供, 当前使用的反代是${proxyIPRemark}`;
 
 	if (!proxyIP && !socks5Enable) {
 		remark = `您的订阅节点由设置变量 ${subRemark} 提供, 当前没设置反代, 推荐您设置PROXYIP变量或SOCKS5变量或订阅连接带proxyIP`;
@@ -838,7 +837,7 @@ function getConfigHtml(userID, host, remark, v2ray, clash) {
 	const htmlHead = `
     <head>
       <title>${projectName}(${fileName})</title>
-      <meta name='description' content='This is a project to generate free vmess nodes. For more information, please subscribe youtube(AM科技) https://youtube.com/@am_clubs and follow GitHub https://github.com/amclubs ' />
+      <meta name='description' content='This is a project to generate free vms nodes. ' />
       <style>
         body {
           font-family: Arial, sans-serif;
@@ -880,23 +879,23 @@ function getConfigHtml(userID, host, remark, v2ray, clash) {
       </style>
     </head>
   `;
-
+	const httpAddr = `https://${host}/${userID}`;
 	// Prepare header string with left alignment
 	const header = `
 		<p align="left" style="padding-left: 20px; margin-top: 20px;">
-		Telegram交流群 点击加入，技术大佬~在线交流</br>
-		<a href="https://t.me/am_clubs" target="_blank">https://t.me/am_clubs</a>
-		</br></br>
-		GitHub项目地址 点击进入，点下星星给个Star!Star!Star!</br>
+	
+		GitHub项目地址 点击进入：</br>
 		<a href="https://github.com/${projectName}" target="_blank">https://github.com/${projectName}</a>
 		</br></br>
-		YouTube频道 点击订阅频道，观看更多技术教程</br>
-		<a href="${ytName}?sub_confirmation=1" target="_blank">${ytName}</a>
+    KV空间变量名设置为：kvid，并进行绑定 </br></br>
+    默认UUID为：${userID}，<a href="${httpAddr}/ui" target="_blank">点击更改UUID</a>
+	
+    
 		</p>
   `;
 
 	// Prepare the output string
-	const httpAddr = `https://${host}/${userID}`;
+	// const httpAddr = `https://${host}/${userID}`;
 	const output = `
 ################################################################
 订阅地址, 支持 Base64、clash-meta、sing-box、Quantumult X、小火箭、surge 等订阅格式, ${remark}
@@ -1231,15 +1230,15 @@ async function getCFSum(accountId, accountIndex, email, key, startDate, endDate)
 const MY_KV_UUID_KEY = atob('VVVJRA==');;
 
 async function checkKVNamespaceBinding(env) {
-	if (typeof env.amclubs === 'undefined') {
-		return new Response('Error: amclubs KV_NAMESPACE is not bound.', {
+	if (typeof env.kvid === 'undefined') {
+		return new Response('Error: kvid KV_NAMESPACE is not bound.', {
 			status: 400,
 		})
 	}
 }
 
 async function getKVData(env) {
-	const value = await env.amclubs.get(MY_KV_UUID_KEY);
+	const value = await env.kvid.get(MY_KV_UUID_KEY);
 	return value ? String(value) : '';
 	// return new Response(value || 'Key not found', {
 	// 	status: value ? 200 : 404
@@ -1255,10 +1254,10 @@ async function setKVData(request, env) {
 	// console.log(`setKVData----> Received value: ${value} \n`);
 
 	try {
-		await env.amclubs.put(MY_KV_UUID_KEY, value);
+		await env.kvid.put(MY_KV_UUID_KEY, value);
 
 		// 读取存入的值，确认是否成功
-		const storedValue = await env.amclubs.get(MY_KV_UUID_KEY);
+		const storedValue = await env.kvid.get(MY_KV_UUID_KEY);
 		if (storedValue === value) {
 			return new Response(`${MY_KV_UUID_KEY} updated successfully`, { status: 200 });
 		} else {

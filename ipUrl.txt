@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipJP.txt@91.149.239.122
+https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipJP.txt@@138.2.36.157
 https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipHK.txt@91.149.239.122
-https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipKR.txt@91.149.239.122
+https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipKR.txt@@192.9.137.193
 https://raw.githubusercontent.com/laputa2046-tech/swf-cf-tunnel/refs/heads/main/ipUS.txt@91.149.239.122
